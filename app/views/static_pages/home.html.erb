@@ -1,0 +1,11 @@
+<h1>今の天気：<%= @current_weather["weather"][0]["description"] %></h1>
+<h1>今の気温：<%= @current_weather["main"]["temp"] %>℃</h1>
+
+<h2>最高気温：<%= @current_weather["main"]["temp_max"] %>℃</h2>
+<h2>最低気温：<%= @current_weather["main"]["temp_min"] %>℃</h2>
+
+<h3>３時間天気</h3>
+<% for i in 0..8 %>
+	<p><%= @forecast["list"][i]["dt_txt"] %>　　<%= @forecast["list"][i]["main"]["temp"] %>℃　
+		<%= @forecast["list"][i]["weather"][0]["description"] %></p>
+<% end %>
